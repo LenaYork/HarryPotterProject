@@ -15,4 +15,25 @@ a:hover {
 button:hover {
   cursor: pointer;
 }
+
+.main {
+  background-color: #fff;
+}
+
+.main-title {
+  text-align: center;
+  font-family: "Chicle", cursive;
+  color: #355342;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 100%;
+}
+
+.results {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-column-gap: 5%;
+}
 /*# sourceMappingURL=style.css.map */

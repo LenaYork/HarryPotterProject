@@ -1,1 +1,26 @@
-//smth
+.main {
+    background-color: $bg-main;
+
+    &-title {
+        text-align: center;
+        font-family: $mainfont;
+        color: $dark-title;
+        font-weight: normal;
+        font-size: 60px;
+        line-height: 100%;
+    }
+
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 5%;
+}
+
+// .inner {
+//     width: 300px;
+//     height: 100px;
+//     background-color: lime;
+//     border: 2px solid black;
+// }
