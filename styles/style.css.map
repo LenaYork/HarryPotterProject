@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "style.scss",
+        "_fonts.scss",
+        "_vars.scss",
+        "_mixins.scss",
+        "_ui.scss",
+        "components/_header.scss",
+        "components/_main.scss",
+        "components/_footer.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
