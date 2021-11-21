@@ -15,4 +15,34 @@ a:hover {
 button:hover {
   cursor: pointer;
 }
+
+.img-body {
+  background-image: url(../images/header_bg.png);
+  max-width: 100%;
+}
+
+.nav {
+  padding: 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  margin-right: 30px;
+  color: #fff;
+  font-family: "Bringin", normal;
+}
+
+.img-logo {
+  margin-right: 50px;
+}
+
+.btn-logo {
+  background-color: #B7EAAF;
+  border-radius: 10px;
+  width: 220px;
+  height: 30px;
+}
 /*# sourceMappingURL=style.css.map */
