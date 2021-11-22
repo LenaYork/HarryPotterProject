@@ -13,3 +13,15 @@ a:hover {
 button:hover {
     cursor: pointer;
 }
+
+button, input, select {
+    border-radius: 10px;
+}
+
+select {
+    background-color:transparent;
+}
+
+select:hover {
+    cursor: pointer;
+}
