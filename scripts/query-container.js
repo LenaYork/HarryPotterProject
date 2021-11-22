@@ -1,4 +1,4 @@
-const characterName;
+let characterName;
 let charactedInfo;
 
 //get user's character name
