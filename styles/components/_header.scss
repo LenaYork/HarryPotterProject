@@ -1,1 +1,32 @@
 //smth
+.img-body {
+    background-image: url(../images/header_bg.png);
+    max-width: 100%;
+}
+.nav {
+    padding: 30px;
+    
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+a {
+    text-decoration: none;
+    margin-right: 30px;
+    color: $white;
+    font-family: $subfont;
+    
+}
+.img-logo {
+    margin-right: 50px;
+
+
+}
+.btn-logo {
+    background-color: $bg-active-link;
+    border-radius: 10px;
+    width: 220px;
+    height: 30px;
+
+}

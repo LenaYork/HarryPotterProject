@@ -16,140 +16,33 @@ button:hover {
   cursor: pointer;
 }
 
-.characters {
-  min-width: 320px;
-  padding: 80px 0 120px;
-  box-sizing: border-box;
+.img-body {
+  background-image: url(../images/header_bg.png);
+  max-width: 100%;
 }
 
-.title {
-  margin: 0 0 80px;
-  font-size: 60px;
-  font-family: "Chicle", cursive;
+.nav {
+  padding: 30px;
   text-align: center;
-  color: #355342;
+  text-decoration: none;
+  font-size: 20px;
 }
 
-.character__wrap {
-  display: grid;
-  box-sizing: border-box;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 1240px;
-  width: 100%;
-  padding: 0 20px;
-  margin: 0 auto;
-}
-@media screen and (max-width: 992px) {
-  .character__wrap {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media screen and (max-width: 576px) {
-  .character__wrap {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 380px) {
-  .character__wrap {
-    grid-template-columns: 1fr;
-  }
-}
-
-.character__item {
-  position: relative;
-  margin: 20px;
-}
-.character__item:hover .character__info {
-  display: block;
-}
-
-.character__img {
-  display: block;
-  width: 100%;
-  height: 225px;
-  border-radius: 20px;
-  background-color: #405851;
-  cursor: pointer;
-}
-.character__img img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 20px;
-}
-
-.character__info {
-  display: none;
-  position: absolute;
-  top: calc(100% + 5px);
-  left: 0;
-  width: calc(100% - 60px);
-  padding: 30px 30px 40px;
-  border-radius: 20px;
-  background-color: #405851;
+a {
+  text-decoration: none;
+  margin-right: 30px;
   color: #fff;
-  z-index: 10;
+  font-family: "Bringin", normal;
 }
 
-.character__info-item {
-  font-size: 18px;
-  border-bottom: 1px solid #ffffff55;
-}
-.character__info-item:not(:last-of-type) {
-  margin-bottom: 14px;
-}
-.character__info-item span {
-  font-family: "Chicle", cursive;
+.img-logo {
+  margin-right: 50px;
 }
 
-.character__info-item_name {
-  font-size: 30px;
-  font-family: "Chicle", cursive;
-  margin-bottom: 30px !important;
-  border-bottom: 0;
+.btn-logo {
+  background-color: #B7EAAF;
+  border-radius: 10px;
+  width: 220px;
+  height: 30px;
 }
-
-.link__more {
-  display: block;
-  margin: 22px 0 0;
-  color: #fff;
-  font-size: 22px;
-  text-align: center;
-}
-
-/*like block*/
-.like__block {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin: 20px 0 0;
-}
-
-.like__counter {
-  display: block;
-  margin-right: 12px;
-  line-height: 1;
-  font-size: 26px;
-}
-
-.like__icon {
-  display: block;
-  width: 40px;
-  height: 40px;
-}
-
-.like__icon svg circle, .like__icon svg path {
-  stroke: #fff;
-  fill: none;
-}
-.like__icon:hover svg circle, .like__icon:hover svg path {
-  fill: #ffc107;
-}
-
-.like__icon_active svg circle, .like__icon_active svg path {
-  fill: #ffc107;
-}
-
 /*# sourceMappingURL=style.css.map */
