@@ -1,7 +1,10 @@
 //smth
 .img-body {
     background-image: url(../images/header_bg.png);
-    max-width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .nav {
     padding: 30px;
