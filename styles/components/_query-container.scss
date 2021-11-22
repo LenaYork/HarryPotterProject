@@ -1,0 +1,66 @@
+.query-container {
+    // max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & input, & button {
+        width: 210px;
+        font-family: Chicle;
+        color: $white;
+        font-size: 28px;
+        line-height: 100%;
+    }
+
+    & button {
+        background-color: transparent;
+    }
+
+    & select {
+        width: 215px;
+    }
+}
+
+.character-input {
+    background-color: $bg-button;
+    color: $white;
+
+    &:focus {
+        background-color: $dark-title;
+    }
+}
+
+.faculty-select {
+    background-color: $bg-button;
+    // outline: 1px solid $bg-main;
+    color: $white;
+    font-family: Chicle;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 100%;
+
+    & > option {
+        background-color: $dark-title ;
+    }
+}
+
+
+.query-form, .faculty-form{
+    display: flex;
+    justify-content: center;
+}
+
+
+    .query-form, .faculty-form {
+        @media (min-width: $breakpoint-sm) {
+            flex-direction: row;
+        }
+
+        @media (max-width:$breakpoint-sm) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+
