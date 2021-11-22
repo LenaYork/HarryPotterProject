@@ -1,35 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Chicle&display=swap");
-@import url(./fonts/Bringin.ttf);
-a {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  cursor: pointer;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
 .characters {
   min-width: 320px;
   padding: 80px 0 120px;
   box-sizing: border-box;
 }
-
 .title {
   margin: 0 0 80px;
   font-size: 60px;
-  font-family: "Chicle", cursive;
+  font-family: $mainfont;
   text-align: center;
-  color: #355342;
+  color: $dark-title;
 }
-
 .character__wrap {
   display: grid;
   box-sizing: border-box;
@@ -38,19 +18,13 @@ button:hover {
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
-}
-@media screen and (max-width: 992px) {
-  .character__wrap {
+  @media screen and (max-width: $breakpoint-lg) {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-@media screen and (max-width: 576px) {
-  .character__wrap {
+  @media screen and (max-width: $breakpoint-sm) {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-@media screen and (max-width: 380px) {
-  .character__wrap {
+  @media screen and (max-width: $breakpoint-xxs) {
     grid-template-columns: 1fr;
   }
 }
@@ -58,9 +32,12 @@ button:hover {
 .character__item {
   position: relative;
   margin: 20px;
-}
-.character__item:hover .character__info {
-  display: block;
+
+  &:hover {
+    .character__info {
+      display: block;
+    }
+  }
 }
 
 .character__img {
@@ -68,17 +45,20 @@ button:hover {
   width: 100%;
   height: 225px;
   border-radius: 20px;
-  background-color: #405851;
+  background-color: $bg-card;
   cursor: pointer;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+  }
+
 }
-.character__img img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 20px;
-}
+
 
 .character__info {
   display: none;
@@ -88,33 +68,36 @@ button:hover {
   width: calc(100% - 60px);
   padding: 30px 30px 40px;
   border-radius: 20px;
-  background-color: #405851;
-  color: #fff;
+  background-color: $bg-card;
+  color: $white;
   z-index: 10;
 }
 
 .character__info-item {
   font-size: 18px;
   border-bottom: 1px solid #ffffff55;
-}
-.character__info-item:not(:last-of-type) {
-  margin-bottom: 14px;
-}
-.character__info-item span {
-  font-family: "Chicle", cursive;
+
+  &:not(:last-of-type) {
+    margin-bottom: 14px;
+  }
+
+  span {
+    font-family: $mainfont;
+  }
 }
 
 .character__info-item_name {
   font-size: 30px;
-  font-family: "Chicle", cursive;
+  font-family: $mainfont;
   margin-bottom: 30px !important;
   border-bottom: 0;
 }
 
+
 .link__more {
   display: block;
   margin: 22px 0 0;
-  color: #fff;
+  color: $white;
   font-size: 22px;
   text-align: center;
 }
@@ -132,6 +115,7 @@ button:hover {
   margin-right: 12px;
   line-height: 1;
   font-size: 26px;
+
 }
 
 .like__icon {
@@ -140,16 +124,26 @@ button:hover {
   height: 40px;
 }
 
-.like__icon svg circle, .like__icon svg path {
-  stroke: #fff;
-  fill: none;
-}
-.like__icon:hover svg circle, .like__icon:hover svg path {
-  fill: #ffc107;
+.like__icon {
+  svg {
+    circle, path {
+      stroke: $white;
+      fill: none;
+    }
+  }
+  &:hover {
+    svg {
+      circle, path {
+        fill: $yellow;
+      }
+    }
+  }
 }
 
-.like__icon_active svg circle, .like__icon_active svg path {
-  fill: #ffc107;
+.like__icon_active {
+  svg {
+    circle, path {
+      fill: $yellow;
+    }
+  }
 }
-
-/*# sourceMappingURL=style.css.map */
