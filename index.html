@@ -21,8 +21,8 @@
 
             <div class="query-container">
                 <form class="query-form">
-                    <input type="text" class="character-input" placeholder="Hermione Granger">
-                    <button type="button">Get info</button>
+                    <input type="text" class="character-input" placeholder="Hermione Granger" id="queryName" maxlength="20" list="charactersList">
+                    <button type="button" id="getQueryName">Get info</button>
                 </form>
                 <form class="faculty-form">
                     <select name="faculty" id="faculty-select" class="faculty-select">
@@ -31,8 +31,38 @@
                         <option value="ravenclaw" class="faculty-item">ravenclaw</option>
                         <option value="hufflepuff" class="faculty-item">hufflepuff</option>
                     </select>
-                    <button type="button">Get info</button>
+                    <button type="button" id="getQueryFaculty">Get info</button>
                 </form>
+                <datalist id="charactersList">
+                    <option value="Harry Potter">
+                    <option value="Hermione Granger">
+                    <option value="Ron Weasley">
+                    <option value="Draco Malfoy">
+                    <option value="Minerva McGonagall">    
+                    <option value="Cedric Diggory">
+                    <option value="Severus Snape">
+                    <option value="Rubeus Hagrid">
+                    <option value="Luna Lovegood">
+                    <option value="Ginny Weasley">
+
+                    <option value="Sirius Black">
+                    <option value="Remus Lupin">
+                    <option value="Arthur Weasley">
+                    <option value="Bellatrix Lestrange">
+                    <option value="Lord Voldemort">    
+                    <option value="Horace Slughorn">
+                    <option value="Kingsley Shacklebolt">
+                    <option value="Dolores Umbridge">
+                    <option value="Lucius Malfoy">
+                    <option value="Lily Potter">
+
+                    <option value="Parvati Patil">
+                    <option value="Sybill Trelawney">
+                    <option value="Vincent Crabbe">
+                    <option value="Gregory Goyle">
+                    <option value="Argus Filch">    
+                
+                </datalist>
             </div>
         </header>
 
@@ -71,5 +101,6 @@
     <script src="./scripts/header.js"></script>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/footer.js"></script>
+    <script src="./scripts/query-container.js"></script>
 </body>
 </html>
