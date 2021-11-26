@@ -68,7 +68,19 @@ a {
 }
 
 header {
-  height: 500px;
+  height: 600px;
+}
+
+@media (max-width: 576px) {
+  header {
+    height: 500px;
+  }
+}
+
+@media (max-width: 380px) {
+  header {
+    height: 400px;
+  }
 }
 
 .main-title {
