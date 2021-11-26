@@ -171,6 +171,7 @@ header {
 
 /* Добавила стилей в контейнер форм */
 .form-container {
+  text-align: center;
   max-width: 300px;
   padding: 10px;
   background-color: white;
@@ -211,6 +212,22 @@ header {
 /* Добавила некоторые эффекты наведения на кнопки */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+}
+
+.out {
+  padding: 30px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.out_cap {
+  padding: 30px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
 }
 
 .characters {
