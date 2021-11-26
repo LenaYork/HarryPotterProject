@@ -6,3 +6,30 @@
 header {
     height: 500px;
 }
+
+.main-title{
+    width: 70%;
+    margin: 0 auto;
+
+    &-text {
+        font-family: Chicle;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 45px;
+        line-height: 77px;
+        text-align: center;
+        color: $white;
+        text-shadow: #252323 2px 2px 1px;
+
+
+        @media (max-width: $breakpoint-sm) {
+            font-size: 25px;
+            line-height: 50px;
+        }
+
+        @media (max-width: $breakpoint-xxs) {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}
