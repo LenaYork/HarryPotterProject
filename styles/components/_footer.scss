@@ -1,10 +1,13 @@
 
 $opacity: 1;
 @mixin btn-icon {
-    //display: flex;
+    
     background-color: #2c2c2c03;
     color: white;
     padding: 16px 20px;
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     //border: none;
     cursor: pointer;
     opacity: 0.8;
@@ -22,6 +25,7 @@ $opacity: 1;
 .t1 {
     @include btn-icon;
     left: 28px;
+    margin-left: 20px;
 }
 .t1:hover {
   opacity: $opacity;
@@ -68,6 +72,7 @@ $opacity: 1;
 
   /* Установила стиль для кнопки отправить/кнопка */
 .form-container .btn {
+  
     background-color: #4CAF50;
     color: white;
     padding: 16px 20px;
