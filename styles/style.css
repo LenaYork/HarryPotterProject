@@ -68,7 +68,49 @@ a {
 }
 
 header {
-  height: 500px;
+  height: 600px;
+}
+
+@media (max-width: 576px) {
+  header {
+    height: 500px;
+  }
+}
+
+@media (max-width: 380px) {
+  header {
+    height: 400px;
+  }
+}
+
+.main-title {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.main-title-text {
+  font-family: Chicle;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 45px;
+  line-height: 77px;
+  text-align: center;
+  color: #fff;
+  text-shadow: #252323 2px 2px 1px;
+}
+
+@media (max-width: 576px) {
+  .main-title-text {
+    font-size: 25px;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 380px) {
+  .main-title-text {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 
 .open-button {
