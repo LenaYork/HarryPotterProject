@@ -5,6 +5,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    box-sizing: border-box;
 }
 .nav {
     padding: 30px;
@@ -29,7 +30,8 @@ a {
 .btn-logo {
     background-color: $bg-active-link;
     border-radius: 10px;
-    width: 220px;
+    width: 280px;
     height: 30px;
+    bottom: 23px;
 
 }

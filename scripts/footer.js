@@ -2,23 +2,28 @@
 let out = document.querySelector('.out');
 
 function t1() {
-
+    let name = '';
     let name1 = prompt(`Загадай желание!`);
-    alert(`Твоё желание ${name1} исполнено!`);
-
-}
-
-document.querySelector('.t1').onclick = t1;
-
-function cap() {
-    let cap = ['gryffindor', 'slytherin', 'ravenclaw', 'hufflepuff'];
-    let cap1 = '';
-    for (let i = 0; i < cap.length; i++) {
-        cap1 += 'Congratulations' + '!' + 'Your school' + ' ' + cap[i];
-        out.innerHTML = cap1;
+    //alert(`Твоё желание ${name1} исполнено!`);
+    name += 'Ваше желание' + ' ' + `${name1} ` + '' + 'исполнено!';
+    if (name1 === '') {
+        out.innerHTML = 'Желаний нет! Вы счастливый человек!';
+    } else if (name1 == false) {
+        out.innerHTML = 'Желаний нет! Вы счастливый человек!';
+    } else {
+        out.innerHTML = name;
     }
 }
-document.querySelector('.cap').onclick = cap;
+document.querySelector('.t1').onclick = t1;
+
+
+function GetValue() {
+    let caps = ['Gryffindor!', 'Slytherin!', 'Ravenclaw!', 'Hufflepuff!'];
+    let random = caps[Math.floor(Math.random() * caps.length)];
+    document.querySelector('.out_cap').innerHTML = random;
+}
+document.querySelector('.cap').onclick = GetValue;
+
 
 function openForm() {
     document.getElementById("myForm").style.display = "block";
