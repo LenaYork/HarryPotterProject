@@ -118,9 +118,11 @@ header {
 
 .open-button {
   background-color: #2c2c2c03;
-  color: white;
+  color: #fff;
+  font-family: "Bringin", normal;
   padding: 16px 20px;
   margin-right: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
   opacity: 0.8;
   bottom: 23px;
@@ -131,16 +133,17 @@ header {
 
 .t1 {
   background-color: #2c2c2c03;
-  color: white;
+  color: #fff;
+  font-family: "Bringin", normal;
   padding: 16px 20px;
   margin-right: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
   opacity: 0.8;
   bottom: 23px;
   width: 280px;
   border-radius: 10px;
   left: 28px;
-  margin-left: 20px;
 }
 
 .t1:hover {
@@ -149,9 +152,11 @@ header {
 
 .cap {
   background-color: #2c2c2c03;
-  color: white;
+  color: #fff;
+  font-family: "Bringin", normal;
   padding: 16px 20px;
   margin-right: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
   opacity: 0.8;
   bottom: 23px;
