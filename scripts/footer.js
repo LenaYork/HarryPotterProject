@@ -7,8 +7,8 @@ function t1() {
     //alert(`Твоё желание ${name1} исполнено!`);
     name += 'Ваше желание' + ' ' + `${name1} ` + '' + 'исполнено!';
     if (name1 === '') {
-        out.innerHTML = 'Желаний нет! Вы счастливый человек!';
-    } else if (name1 == false) {
+        out.innerHTML = 'Пожалуйста, напишите Ваше желание!';
+    } else if (name1 === null) {
         out.innerHTML = 'Желаний нет! Вы счастливый человек!';
     } else {
         out.innerHTML = name;
