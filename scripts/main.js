@@ -1,31 +1,18 @@
-// let character = {
-//     name: "",
-//     // "alternate_names": [""],
-//     // "species": "human",
-//     gender: "",
-//     house: "",
-//     dateOfBirth: "",
-//     // "yearOfBirth": 1980,
-//     // "wizard": true,
-//     ancestry: "",
-//     // "eyeColour": "green",
-//     // "hairColour": "black",
-//     // "wand": { "wood": "holly", "core": "phoenix feather", "length": 11 },
-//     // "patronus": "stag",
-//     // "hogwartsStudent": true,
-//     // "hogwartsStaff": false,
-//     actor: "",
-//     // "alternate_actors": [""],
-//     // "alive": true,
-//     image: "",
-// }
-
 //функция получения JSON с персонажами
 function getCharacters() {
     fetch("http://hp-api.herokuapp.com/api/characters").then(function (response) {
         return response.json();
     }).then(function (j) {
+        //
+        // let name = "Harry Potter"
+        // let a = j.find(item => item.name === name)
+        // console.log(a)
+
         let charactersJson = JSON.stringify(j);
+
+
+
+
         createCharacterItem(charactersJson);
     }).catch(function (error) {
         console.log(error);
@@ -36,12 +23,16 @@ function getCharacters() {
 document.addEventListener("DOMContentLoaded", (event) => {
     getCharacters();
 
+    // if(window.location.contains("person")){
+    //     createCharacterPage();
+    // }
+
+
 });
 
 //создаем HTML с персонажем
 function createCharacterItem(charactersJson){
     let characters = JSON.parse(charactersJson);
-    // let characterBlock = "";
     let characterBlock =  document.querySelector(".character__wrap");
 
     // for (let i = 0; i <= characters.length; i++) {
@@ -85,13 +76,20 @@ function createCharacterItem(charactersJson){
         let characterLink = document.createElement("a");
         characterLink.classList.add("link__more");
         // ???? ссылка на страницу с персонажем
-        characterLink.setAttribute("href", `/${characters[i].name}`);
+        // characterLink.setAttribute("href", `person.html`);
+        // characterLink.setAttribute("data-person-number", characters[i].name);
         characterLink.innerText = "Show more...";
         characterInfo.append(characterLink);
 
+        characterLink.onclick = function (e, data) {
+            e.preventDefault();
+            location.href = 'person.html' + `?name=${characters[i].name}`;
+        }
+
         //like
-        let likeBlock = document.createElement("div");
+        let likeBlock = document.createElement("form");
         likeBlock.classList.add("like__block");
+        likeBlock.setAttribute("method", "post")
         characterInfo.append(likeBlock);
 
         let countOfLikes = 0;
@@ -100,7 +98,6 @@ function createCharacterItem(charactersJson){
         likeCounter.classList.add("like__counter");
         likeCounter.innerHTML = countOfLikes;
         likeBlock.append(likeCounter);
-
 
         let likeSvg = `<svg className="js-unlike" viewBox="0 0 24 24" xml:space="preserve"
                              xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="19" fill="none" r="4.5" stroke="#303C42" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/>
@@ -115,12 +112,16 @@ function createCharacterItem(charactersJson){
                                 fill="none" stroke="#303C42" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-miterlimit="10"/></svg>`;
 
-        let likeBtn = document.createElement("span");
+
+
+        let likeBtn = document.createElement("button");
         likeBtn.classList.add("like__icon");
         likeBtn.innerHTML = likeSvg;
         likeBlock.append(likeBtn);
 
-        likeBtn.onclick = function() {
+        likeBtn.onclick = function(e) {
+            e.preventDefault();
+
             likeBtn.classList.toggle("like__icon_active");
 
             if(likeBtn.classList.contains("like__icon_active")){
@@ -131,6 +132,18 @@ function createCharacterItem(charactersJson){
             }
 
             likeCounter.innerHTML =  countOfLikes;
+
+
+            let like = {
+                count: countOfLikes,
+            }
+            fetch("https://httpbin.org/post", {
+                method: "POST",
+                body: JSON.stringify(like),
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            }).then(response => response.json()).then(like => console.log(like)).catch(error => console.log(error))
         };
 
     }
