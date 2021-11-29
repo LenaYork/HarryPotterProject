@@ -22,14 +22,10 @@
 
 //функция получения JSON с персонажами
 function getCharacters() {
-    // fetch("http://hp-api.herokuapp.com/api/characters", {
-//     mode: 'no-cors',
-// })
     fetch("http://hp-api.herokuapp.com/api/characters").then(function (response) {
         return response.json();
     }).then(function (j) {
         let charactersJson = JSON.stringify(j);
-        // console.log(characters);
         createCharacterItem(charactersJson);
     }).catch(function (error) {
         console.log(error);
@@ -93,24 +89,49 @@ function createCharacterItem(charactersJson){
         characterLink.innerText = "Show more...";
         characterInfo.append(characterLink);
 
+        //like
+        let likeBlock = document.createElement("div");
+        likeBlock.classList.add("like__block");
+        characterInfo.append(likeBlock);
 
-        //         <div className="like__block">
-        //             <span className="like__counter">50</span>
-        //             <a id="like" href="javascript:void(0);" className="like__icon"> <!--like__icon_active-->
-        //                 <svg className="js-unlike" viewBox="0 0 24 24" xml:space="preserve"
-        //                      xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="19" fill="none" r="4.5" stroke="#303C42" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/>
-        //                     <path d="M12,21.5   c-1.3789063,0-2.5-1.121582-2.5-2.5" fill="none" stroke="#303C42"
-        //                           stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/>
-        //                     <path
-        //                         d="   M15.6721792,16.399004C15.6721792,16.399004,17.5,15.5,17.5,13s-1-2.5-1-4.5c0-4,6.5-2.5,6-8c0,0,1,1.5,1,2.5s0,1-0.5,1.9994197   C23,4.9994197,23.5,5.5,23.5,7S22,9.5,22,9.5s0.5,2-1.5,3C20.5,12.5,20.6721802,14.3990049,15.6721792,16.399004z"
-        //                         fill="none" stroke="#303C42" stroke-linecap="round" stroke-linejoin="round"
-        //                         stroke-miterlimit="10"/>
-        //                     <path
-        //                         d="   M8.3275213,16.3989086C8.3275213,16.3989086,6.5,15.5,6.5,13s1-2.5,1-4.5c0-4-6.5-2.5-6-8c0,0-1,1.5-1,2.5s0,1,0.5,1.9994197   C1,4.9994197,0.5,5.5,0.5,7S2,9.5,2,9.5s-0.5,2,1.5,3C3.5,12.5,3.3275216,14.3989086,8.3275213,16.3989086z"
-        //                         fill="none" stroke="#303C42" stroke-linecap="round" stroke-linejoin="round"
-        //                         stroke-miterlimit="10"/></svg>
-        //             </a>
-        //         </div>
+        let countOfLikes = 0;
+
+        let likeCounter = document.createElement("span");
+        likeCounter.classList.add("like__counter");
+        likeCounter.innerHTML = countOfLikes;
+        likeBlock.append(likeCounter);
+
+
+        let likeSvg = `<svg className="js-unlike" viewBox="0 0 24 24" xml:space="preserve"
+                             xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="19" fill="none" r="4.5" stroke="#303C42" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/>
+                            <path d="M12,21.5   c-1.3789063,0-2.5-1.121582-2.5-2.5" fill="none" stroke="#303C42"
+                                  stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/>
+                            <path
+                                d="   M15.6721792,16.399004C15.6721792,16.399004,17.5,15.5,17.5,13s-1-2.5-1-4.5c0-4,6.5-2.5,6-8c0,0,1,1.5,1,2.5s0,1-0.5,1.9994197   C23,4.9994197,23.5,5.5,23.5,7S22,9.5,22,9.5s0.5,2-1.5,3C20.5,12.5,20.6721802,14.3990049,15.6721792,16.399004z"
+                                fill="none" stroke="#303C42" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-miterlimit="10"/>
+                            <path
+                                d="   M8.3275213,16.3989086C8.3275213,16.3989086,6.5,15.5,6.5,13s1-2.5,1-4.5c0-4-6.5-2.5-6-8c0,0-1,1.5-1,2.5s0,1,0.5,1.9994197   C1,4.9994197,0.5,5.5,0.5,7S2,9.5,2,9.5s-0.5,2,1.5,3C3.5,12.5,3.3275216,14.3989086,8.3275213,16.3989086z"
+                                fill="none" stroke="#303C42" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-miterlimit="10"/></svg>`;
+
+        let likeBtn = document.createElement("span");
+        likeBtn.classList.add("like__icon");
+        likeBtn.innerHTML = likeSvg;
+        likeBlock.append(likeBtn);
+
+        likeBtn.onclick = function() {
+            likeBtn.classList.toggle("like__icon_active");
+
+            if(likeBtn.classList.contains("like__icon_active")){
+                countOfLikes +=1;
+
+            } else {
+                countOfLikes -=1;
+            }
+
+            likeCounter.innerHTML =  countOfLikes;
+        };
 
     }
 }
