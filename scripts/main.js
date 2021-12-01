@@ -22,12 +22,6 @@ function getCharacters() {
 //при загрузке страницы получаем JSON с персонажами
 document.addEventListener("DOMContentLoaded", (event) => {
     getCharacters();
-
-    // if(window.location.contains("person")){
-    //     createCharacterPage();
-    // }
-
-
 });
 
 //создаем HTML с персонажем
@@ -47,9 +41,11 @@ function createCharacterItem(charactersJson){
         characterImageWrap.classList.add("character__img");
         characterItem.append(characterImageWrap);
 
-        let characterImage = document.createElement("img");
-        characterImage.src = characters[i].image;
-        characterImageWrap.append(characterImage);
+        if(characters[i].image !== ""){
+            let characterImage = document.createElement("img");
+            characterImage.src = characters[i].image;
+            characterImageWrap.append(characterImage);
+        }
 
         let characterInfo = document.createElement("div");
         characterInfo.classList.add("character__info");
