@@ -103,6 +103,9 @@
   color: $white;
   font-size: 22px;
   text-align: center;
+  &:hover {
+    color: $yellow;
+  }
 }
 
 /*like block*/

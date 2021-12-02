@@ -31,7 +31,7 @@ function createCharacterItem(charactersJson){
 
     // for (let i = 0; i <= characters.length; i++) {
     // пока ограничусь пятью
-    for (let i = 0; i <= 4; i++) {
+    for (let i = 0; i <= 50; i++) {
 
         let characterItem = document.createElement("div");
         characterItem.classList.add("character__item");
