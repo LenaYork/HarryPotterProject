@@ -3,16 +3,7 @@ function getCharacters() {
     fetch("http://hp-api.herokuapp.com/api/characters").then(function (response) {
         return response.json();
     }).then(function (j) {
-        //
-        // let name = "Harry Potter"
-        // let a = j.find(item => item.name === name)
-        // console.log(a)
-
         let charactersJson = JSON.stringify(j);
-
-
-
-
         createCharacterItem(charactersJson);
     }).catch(function (error) {
         console.log(error);
@@ -29,9 +20,7 @@ function createCharacterItem(charactersJson){
     let characters = JSON.parse(charactersJson);
     let characterBlock =  document.querySelector(".character__wrap");
 
-    // for (let i = 0; i <= characters.length; i++) {
-    // пока ограничусь пятью
-    for (let i = 0; i <= 50; i++) {
+    for (let i = 0; i <= characters.length; i++) {
 
         let characterItem = document.createElement("div");
         characterItem.classList.add("character__item");
@@ -119,27 +108,26 @@ function createCharacterItem(charactersJson){
             e.preventDefault();
 
             likeBtn.classList.toggle("like__icon_active");
-
-            if(likeBtn.classList.contains("like__icon_active")){
-                countOfLikes +=1;
-
-            } else {
-                countOfLikes -=1;
-            }
-
-            likeCounter.innerHTML =  countOfLikes;
-
-
-            let like = {
-                count: countOfLikes,
-            }
+            let countOfLikes = 0;
+            countOfLikes++;
             fetch("https://httpbin.org/post", {
                 method: "POST",
-                body: JSON.stringify(like),
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8"
+                body: countOfLikes,
+            }).then(function (response) {
+                return response.json();
+            }).then(function (count) {
+                let countOfLike = Number(count.data);
+                console.log(countOfLike);
+                if(likeBtn.classList.contains("like__icon_active")){
+                    likeCounter.innerHTML = countOfLikes;
+                } else {
+                    likeCounter.innerHTML = countOfLikes - 1;
                 }
-            }).then(response => response.json()).then(like => console.log(like)).catch(error => console.log(error))
+                console.log(countOfLike);
+            }).catch(function (error) {
+                console.log(error);
+            });
+
         };
 
     }
