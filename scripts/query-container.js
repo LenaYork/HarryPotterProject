@@ -8,7 +8,7 @@ let recievedHouse; // хранит информкацию о всех на фа�
 document.querySelector("#getQueryName").addEventListener("click", function() {
     characterName = document.querySelector("#queryName").value;
 
-    fetch(`http://hp-api.herokuapp.com/api/characters`)
+    fetch(`https://hp-api.herokuapp.com/api/characters`)
         .then(resp => resp.json())
         .then(response => {
             recievedData = response;
