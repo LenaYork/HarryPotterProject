@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 //функция получения JSON с персонажем
 function getCharacter() {
-    fetch("http://hp-api.herokuapp.com/api/characters").then(function (response) {
+    fetch("https://hp-api.herokuapp.com/api/characters").then(function (response) {
         return response.json();
     }).then(function (j) {
         let characterName = new URL(location.href).searchParams.get('name');
